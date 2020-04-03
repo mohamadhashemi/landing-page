@@ -1,0 +1,55 @@
+$color-primary:white;
+$color-secondery:#CECECE;
+$button-color: #0000FD;
+$text-primary:70px;
+$text-secondary:35px;
+$text-title:50px;
+$footer-size:20px;
+@mixin buttons() {
+    border: none;
+    border-radius: 50px;
+    background-color: $button-color;
+    color: $color-primary;
+    padding: 20px 35px;
+    margin-top: 30px;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+@mixin service() {
+    text-align: center;
+    flex: 0 0 30%;
+    background-color: $color-primary;
+    align-content: space-around;
+    margin-bottom: 30px;
+}
+
+@mixin extra-small-device {
+    @media screen and (max-width: 576px) {
+        @content
+    }
+}
+
+@mixin small-device {
+    @media screen and (min-width: 575px) and (max-width: 767px) {
+        @content
+    }
+}
+
+@mixin mediume-device {
+    @media screen and (min-width: 768px)and(max-width: 991px) {
+        @content
+    }
+}
+
+@mixin larg-device {
+    @media screen and (min-width: 992px)and(max-width: 1199px) {
+        @content
+    }
+}
+
+@mixin wide-device {
+    @media screen and (min-width: 1200px) {
+        @content
+    }
+}

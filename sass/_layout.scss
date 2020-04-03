@@ -1,0 +1,265 @@
+    .header {
+        background: url("../images/rectangle-17.png ") no-repeat;
+        height: 900px;
+        .nav {
+            .landing {
+                position: relative;
+                top: 60px;
+                left: 60px;
+                @include mediume-device {
+                    top: 45px;
+                }
+            }
+            .responsive-menu {
+                display: none;
+                width: 200px;
+                height: 100vh;
+                background: #333;
+                position: fixed;
+                top: 0;
+                right: -220px;
+                overflow: hidden;
+                box-sizing: border-box;
+                padding: 20px;
+                z-index: 1001;
+                ul {
+                    display: flex;
+                    flex-direction: column;
+                    li {
+                        margin: 10px 0;
+                    }
+                }
+            }
+            .menu {
+                width: 100%;
+                height: 40px;
+                padding: 0 30px;
+                overflow: hidden;
+                box-sizing: border-box;
+                ul {
+                    margin-top: 6px;
+                    float: right;
+                    @include extra-small-device {
+                        display: none;
+                    }
+                    @include small-device {
+                        display: none;
+                    }
+                    li {
+                        float: right;
+                        margin: 0 12px;
+                    }
+                }
+                .responsive-menu-icon {
+                    float: right;
+                    margin-top: 4px;
+                    cursor: pointer;
+                    display: none;
+                    font-size: 30px;
+                    color: $button-color;
+                    position: fixed;
+                    right: 40px;
+                    @include extra-small-device {
+                        display: block;
+                    }
+                    @include small-device {
+                        display: block;
+                        right: 17%;
+                    }
+                }
+            }
+        }
+        .about-us {
+            text-align: center;
+            width: 40%;
+            color: $color-secondery;
+            margin: 150px auto;
+            @include extra-small-device() {
+                width: 100%;
+            }
+            @include small-device() {
+                width: 80%;
+            }
+            @include mediume-device {
+                width: 70%;
+            }
+            @include wide-device {
+                width: 59%;
+            }
+            p:first-child {
+                font-size: $text-primary;
+                margin-bottom: 10px;
+                color: $color-primary;
+                @include extra-small-device() {
+                    font-size: $text-secondary;
+                }
+            }
+            button {
+                @extend %buttons;
+            }
+        }
+    }
+    
+    .main {
+        .products {
+            display: flex;
+            flex-flow: nowrap row;
+            @include extra-small-device {
+                flex-direction: column;
+            }
+            @include small-device {
+                flex-direction: column;
+            }
+            @include mediume-device {
+                flex-direction: column;
+            }
+            img {
+                width: 570px;
+                @include extra-small-device {
+                    width: 100%;
+                }
+                @include small-device {
+                    width: 100%;
+                }
+                @include mediume-device {
+                    width: 100%;
+                }
+            }
+            div {
+                flex: 1 1 50%;
+            }
+            &-text {
+                padding: 35px;
+                p:first-child {
+                    font-size: $text-title;
+                    @include extra-small-device {
+                        font-size: $text-secondary;
+                    }
+                }
+            }
+            button {
+                @extend %buttons;
+                margin-top: 80px;
+            }
+        }
+        .service-container {
+            padding-top: 30px;
+            background-color: #FAFAFA;
+            .service-title {
+                width: 70%;
+                margin: 100px auto;
+                text-align: center;
+                .title {
+                    font-size: $text-secondary;
+                }
+            }
+            .service-list {
+                display: flex;
+                width: 95%;
+                margin: 0 auto;
+                justify-content: space-around;
+                flex-flow: wrap row;
+                div {
+                    @include service();
+                    @include extra-small-device {
+                        flex: 1 1 100%;
+                    }
+                    @include small-device {
+                        flex: 0 1 45%;
+                    }
+                    @include mediume-device {
+                        flex: 0 1 45%;
+                    }
+                    i {
+                        padding: 30px;
+                        background-color: $button-color;
+                        border-radius: 50%;
+                        color: white;
+                        margin: 30px 0;
+                    }
+                    p:last-child {
+                        padding: 0 80px 60px;
+                        color: $color-secondery;
+                        @include extra-small-device {
+                            padding: 20px 0;
+                        }
+                        @include small-device {
+                            padding: 0 25px 60px;
+                        }
+                        @include larg-device {
+                            padding: 0 28px 60px;
+                        }
+                    }
+                }
+            }
+        }
+        .our-studies {
+            height: 600px;
+            color: $color-primary;
+            justify-items: center;
+            background: url('../images/Image.png') no-repeat;
+            text-align: center;
+            .title {
+                font-size: $text-secondary;
+            }
+            >div {
+                padding-top: 240px;
+                width: 60%;
+                margin: 0 auto;
+                @include extra-small-device {
+                    width: 100%;
+                }
+            }
+            i {
+                opacity: .4;
+                margin-bottom: 50px;
+            }
+        }
+        .projects {
+            .title-projects {
+                margin: 100px auto;
+                width: 60%;
+                text-align: center;
+                @include extra-small-device {
+                    width: 100%;
+                }
+                .title {
+                    font-size: $text-secondary;
+                }
+            }
+            .other-products {
+                @extend .products;
+                @include extra-small-device {
+                    flex-direction: column-reverse;
+                    margin-bottom: 20px;
+                }
+                @include small-device {
+                    flex-direction: column-reverse;
+                    margin-bottom: 30px;
+                }
+                @include mediume-device {
+                    flex-direction: column-reverse;
+                    margin-bottom: 50px;
+                }
+                @include larg-device {
+                    .image-products-left {
+                        order: -1;
+                    }
+                }
+                @include wide-device {
+                    .image-products-left {
+                        order: -1;
+                    }
+                }
+            }
+        }
+    }
+    
+    .footer {
+        font-size: $footer-size;
+        background-color: $button-color;
+        color: $color-secondery;
+        padding: 30px 0;
+        text-align: center;
+        justify-content: center;
+    }
